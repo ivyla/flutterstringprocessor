@@ -22,7 +22,7 @@ class _WordState extends State<Word> {
   Widget build(BuildContext context) {
     return Container(
       child: FlatButton(
-        child: Text(buttonLabel, style: TextStyle(fontSize: 30.0)),
+        child: Text(buttonLabel, style: TextStyle(fontSize: 20.0)),
         onPressed: () => print(getButtonLabel() + " was touched!"),
         color: Colors.blue,
         textColor: Colors.black,
