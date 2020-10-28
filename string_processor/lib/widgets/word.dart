@@ -22,13 +22,10 @@ class _WordState extends State<Word> {
     return showDialog(
         context: context,
         builder: (BuildContext context) {
-          return Message();
+          return Message(widget.word);
         });
-    // display a message widget
   }
 
-  // final int clicks;
-  // const WordState()
   @override
   Widget build(BuildContext context) {
     return Container(

@@ -6,19 +6,6 @@ import 'word.dart';
 // final textFile = new File('assets/originaltext.txt').readAsStringSync();
 
 // http://www.androidcoding.in/2020/09/14/flutter-local-json/
-// @override
-// Widget build(BuildContext context) {
-
-//   print(parsedText);
-//   return Container(
-//     child: Row(
-//       children: <Widget>[
-//         Word("yeet"),
-//         Word("yote"),
-//       ],
-//     ),
-//   );
-// }
 
 class Paragraph extends StatefulWidget {
   @override
@@ -30,8 +17,7 @@ class Paragraph extends StatefulWidget {
 class _ParagraphState extends State<Paragraph> {
   List jsonData;
   String paragraph =
-      '''The researchers found that word recall was greatest when the participants read aloud to themselves.
-    “This study confirms that learning and memory benefit from active involvement,” says study author Colin M. MacLeod, a professor and chair of the Department of Psychology at the University of Waterloo.''';
+      '''The researchers found that word recall was greatest when the participants read aloud to themselves. “This study confirms that learning and memory benefit from active involvement,” says study author Colin M. MacLeod, a professor and chair of the Department of Psychology at the University of Waterloo.''';
   @override
   Widget build(BuildContext context) {
     var parsedText =
