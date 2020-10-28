@@ -1,14 +1,26 @@
 import 'package:flutter/material.dart';
 
-// convert into a stateful widget
-// take in argument of word
+// take in argument of word (might have parenthesis, whitespace, newline)
 // parse it to alphanumeric
+// responding to the "correct word" - match the words
 // match it with values in the JSON
-class Message extends StatelessWidget {
+class Message extends StatefulWidget {
+  @override
+  _MessageState createState() => _MessageState();
+}
+
+class _MessageState extends State<Message> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Text('this is a message widget'),
+    return AlertDialog(
+      title: Text('message widget'),
+      content: SingleChildScrollView(
+          child: (ListBody(
+        children: <Widget>[
+          Text("This the word"),
+          Text("This is the definition")
+        ],
+      ))),
     );
   }
 }

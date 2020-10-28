@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'message.dart';
 
 class Word extends StatefulWidget {
   final word;
@@ -16,6 +17,16 @@ class _WordState extends State<Word> {
     return buttonLabel;
   }
 
+  handlePress() {
+    print(getButtonLabel() + " was touched!");
+    return showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return Message();
+        });
+    // display a message widget
+  }
+
   // final int clicks;
   // const WordState()
   @override
@@ -23,7 +34,7 @@ class _WordState extends State<Word> {
     return Container(
       child: FlatButton(
         child: Text(buttonLabel, style: TextStyle(fontSize: 20.0)),
-        onPressed: () => print(getButtonLabel() + " was touched!"),
+        onPressed: () => handlePress(),
         color: Colors.blue,
         textColor: Colors.black,
       ),

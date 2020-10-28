@@ -38,10 +38,11 @@ class _ParagraphState extends State<Paragraph> {
         // paragraph.replaceAll(new RegExp(r'[^\w\s]+'), "").split(" ");
         paragraph.split(" ");
 
-    return Container(
-        child: Wrap(
+    return SingleChildScrollView(
+        child: Container(
+            child: Wrap(
       alignment: WrapAlignment.start,
-      children: parsedText.map((veggie) => Word(veggie)).toList(),
-    ));
+      children: parsedText.map((wordLabel) => Word(wordLabel)).toList(),
+    )));
   }
 }
