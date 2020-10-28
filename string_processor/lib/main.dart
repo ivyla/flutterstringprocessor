@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'widgets/paragraph.dart';
 
 void main() {
   runApp(MyApp());
@@ -16,9 +17,9 @@ class MyApp extends StatelessWidget {
       ),
       home: Scaffold(
           appBar: AppBar(
-            title: Text('Hello world'),
+            title: Text('String Processor'),
           ),
-          body: Center(child: Text('right in the middle'))),
+          body: Center(child: Paragraph())),
     );
   }
 }
