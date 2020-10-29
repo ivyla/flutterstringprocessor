@@ -17,7 +17,6 @@ class _ParagraphState extends State<Paragraph> {
   @override
   Widget build(BuildContext context) {
     var parsedText = paragraph.split(" ");
-    var parsedParagraphs = paragraph.split("\n");
 
 // Single Paragraph without \n
     return SingleChildScrollView(
