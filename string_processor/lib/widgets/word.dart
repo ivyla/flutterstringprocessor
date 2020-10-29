@@ -21,20 +21,17 @@ class _WordState extends State<Word> {
   }
 
   _handlePress() {
-    setState(() {
-      if (clicks == 2) {
-        clicks = 0;
-      } else if (clicks == 1) {
-        return showDialog(
-            context: context,
-            builder: (BuildContext context) {
-              return Message(widget.word);
-            });
-      } else {
-        clicks = clicks + 1;
-      }
-      print("clicks: " + clicks.toString());
-    });
+    if (clicks == 2) {
+      setState(() => clicks = 0);
+    } else if (clicks == 1) {
+      return showDialog(
+          context: context,
+          builder: (BuildContext context) {
+            return Message(widget.word);
+          });
+    } else {
+      setState(() => clicks = clicks + 1);
+    }
   }
 
   @override
@@ -51,7 +48,7 @@ class _WordState extends State<Word> {
           textAlign: TextAlign.left,
         ),
         onPressed: () => _handlePress(),
-        fillColor: clicks > 0 ? Colors.blue : null,
+        fillColor: clicks > 0 ? Colors.yellow : null,
         constraints:
             BoxConstraints(minWidth: buttonLabel.length.toDouble() * 14),
         // textColor: Colors.black,

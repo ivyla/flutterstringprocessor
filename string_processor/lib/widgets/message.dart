@@ -34,35 +34,39 @@ class _MessageState extends State<Message> {
                 future: DefaultAssetBundle.of(context)
                     .loadString('assets/words.json'),
                 builder: (context, snapshot) {
-                  // Decode the JSON
-                  int indexKey;
-                  var wordsData = json.decode(snapshot.data.toString());
-                  // find index of the parsed word
-                  for (int i = 0; i < wordsData.length; i++) {
-                    if ((wordsData[i]['word'].toUpperCase())
-                            .compareTo(parsedWord.toUpperCase()) ==
-                        0) {
-                      indexKey = i;
-                      definitionText = wordsData[indexKey]['key'];
-                      break;
-                    } else {
-                      indexKey = -1;
-                      definitionText = "Definition not found";
+                  if (!snapshot.hasData) {
+                    return Center(child: Text("Getting definition.."));
+                  } else {
+                    // Decode the JSON
+                    int indexKey;
+                    var wordsData = json.decode(snapshot.data);
+                    // find index of the parsed word
+                    for (int i = 0; i < wordsData.length; i++) {
+                      if ((wordsData[i]['word'].toUpperCase())
+                              .compareTo(parsedWord.toUpperCase()) ==
+                          0) {
+                        indexKey = i;
+                        definitionText = wordsData[indexKey]['key'];
+                        break;
+                      } else {
+                        indexKey = -1;
+                        definitionText = "Definition not found";
+                      }
                     }
+                    return AlertDialog(
+                      title: Text(parsedWord.toLowerCase()),
+                      content: SingleChildScrollView(
+                          child: (ListBody(
+                        children: <Widget>[
+                          // Text("Index " + index),
+                          Text("/həˈlō,heˈlō wərld/"),
+                          Text("Key: " + definitionText),
+                          Text(
+                              '''Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin iaculis tristique purus.\" ''')
+                        ],
+                      ))),
+                    );
                   }
-                  return AlertDialog(
-                    title: Text(parsedWord.toLowerCase()),
-                    content: SingleChildScrollView(
-                        child: (ListBody(
-                      children: <Widget>[
-                        // Text("Index " + index),
-                        Text("/həˈlō,heˈlō wərld/"),
-                        Text("Key: " + definitionText),
-                        Text(
-                            '''Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin iaculis tristique purus.\" ''')
-                      ],
-                    ))),
-                  );
                 }),
           ]),
     ));
