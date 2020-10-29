@@ -36,23 +36,16 @@ class _WordState extends State<Word> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      // margin: EdgeInsets.all(1),
-      padding: EdgeInsets.only(left: 0, right: 1, top: 1, bottom: 1),
-      child: RawMaterialButton(
-        padding: EdgeInsets.only(left: 0),
-        materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
-        child: Text(
-          buttonLabel,
-          style: TextStyle(fontSize: defaultFontSize),
-          textAlign: TextAlign.left,
-        ),
-        onPressed: () => _handlePress(),
-        fillColor: clicks > 0 ? Colors.yellow : null,
-        constraints:
-            BoxConstraints(minWidth: buttonLabel.length.toDouble() * 14),
-        // textColor: Colors.black,
-      ),
-    );
+    return GestureDetector(
+        onTap: () => _handlePress(),
+        child: Container(
+          color: clicks > 0 ? Colors.yellow : null,
+          padding: EdgeInsets.only(top: 1, bottom: 1, left: 4, right: 4),
+          child: Text(
+            buttonLabel,
+            style: TextStyle(fontSize: defaultFontSize),
+            textAlign: TextAlign.left,
+          ),
+        ));
   }
 }

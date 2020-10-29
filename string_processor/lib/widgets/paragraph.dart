@@ -17,10 +17,11 @@ class _ParagraphState extends State<Paragraph> {
     var parsedText = paragraph.split(" ");
 
     return SingleChildScrollView(
+        padding: EdgeInsets.all(18),
         child: Container(
             child: Wrap(
-      alignment: WrapAlignment.start,
-      children: parsedText.map((wordLabel) => Word(wordLabel)).toList(),
-    )));
+          alignment: WrapAlignment.start,
+          children: parsedText.map((wordLabel) => Word(wordLabel)).toList(),
+        )));
   }
 }
