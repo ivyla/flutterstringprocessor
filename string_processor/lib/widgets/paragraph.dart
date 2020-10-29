@@ -1,18 +1,12 @@
 import 'package:flutter/material.dart';
 import 'word.dart';
-
+// Credits:
 // RegExp for parsedString: https://stackoverflow.com/questions/53239702/how-to-remove-only-symbols-from-string-in-dart
-// read text from file, parse and print to page
-// final textFile = new File('assets/originaltext.txt').readAsStringSync();
-
-// http://www.androidcoding.in/2020/09/14/flutter-local-json/
 
 class Paragraph extends StatefulWidget {
   @override
   _ParagraphState createState() => _ParagraphState();
 }
-
-// https://m.clearbluedesign.com/creating-widgets-with-custom-builder-functions-in-flutter-b4ab0cf6e440
 
 class _ParagraphState extends State<Paragraph> {
   List jsonData;
@@ -20,9 +14,7 @@ class _ParagraphState extends State<Paragraph> {
       '''The researchers found that word recall was greatest when the participants read aloud to themselves. “This study confirms that learning and memory benefit from active involvement,” says study author Colin M. MacLeod, a professor and chair of the Department of Psychology at the University of Waterloo.''';
   @override
   Widget build(BuildContext context) {
-    var parsedText =
-        // paragraph.replaceAll(new RegExp(r'[^\w\s]+'), "").split(" ");
-        paragraph.split(" ");
+    var parsedText = paragraph.split(" ");
 
     return SingleChildScrollView(
         child: Container(

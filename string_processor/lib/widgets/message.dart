@@ -25,53 +25,47 @@ class _MessageState extends State<Message> {
     String definitionText = "";
     // parse the message label into an alphabetical word,
     // look up clean word in the json file
-    return AlertDialog(
-        title: Text(messageLabelChild),
-        content: SingleChildScrollView(
-          child: ListBody(
-              //center
-              children: <Widget>[
-                FutureBuilder(
-                    future: DefaultAssetBundle.of(context)
-                        .loadString('assets/words.json'),
-                    builder: (context, snapshot) {
-                      // Decode the JSON
-                      int indexKey;
-                      var wordsData = json.decode(snapshot.data.toString());
-                      // find index of the parsed word
-                      for (int i = 0; i < wordsData.length; i++) {
-                        if ((wordsData[i]['word'].toUpperCase())
-                                .compareTo(parsedWord.toUpperCase()) ==
-                            0) {
-                          indexKey = i;
-                          definitionText = wordsData[indexKey]['key'];
-                          break;
-                        } else {
-                          indexKey = -1;
-                          definitionText = "Definition not found";
-                          print("parsedWord: " +
-                              parsedWord +
-                              " != " +
-                              wordsData[i]['word']);
-                        }
-                      }
-                      return AlertDialog(
-                        title: Text(messageLabelChild),
-                        content: SingleChildScrollView(
-                            child: (ListBody(
-                          children: <Widget>[
-                            // Text("Index " + index),
-                            Text("/həˈlō,heˈlō wərld/"),
-                            Text("Key: " + definitionText),
-                            Text('''Lorem ipsum dolor sit amet,
-                                 consectetur adipiscing elit.
-                                  Proin iaculis tristique purus.\" ''')
-                          ],
-                        ))),
-                      );
-                    }),
-              ]),
-        ));
+    return Center(
+        child: SingleChildScrollView(
+      child: ListBody(
+          //center
+          children: <Widget>[
+            FutureBuilder(
+                future: DefaultAssetBundle.of(context)
+                    .loadString('assets/words.json'),
+                builder: (context, snapshot) {
+                  // Decode the JSON
+                  int indexKey;
+                  var wordsData = json.decode(snapshot.data.toString());
+                  // find index of the parsed word
+                  for (int i = 0; i < wordsData.length; i++) {
+                    if ((wordsData[i]['word'].toUpperCase())
+                            .compareTo(parsedWord.toUpperCase()) ==
+                        0) {
+                      indexKey = i;
+                      definitionText = wordsData[indexKey]['key'];
+                      break;
+                    } else {
+                      indexKey = -1;
+                      definitionText = "Definition not found";
+                    }
+                  }
+                  return AlertDialog(
+                    title: Text(parsedWord),
+                    content: SingleChildScrollView(
+                        child: (ListBody(
+                      children: <Widget>[
+                        // Text("Index " + index),
+                        Text("/həˈlō,heˈlō wərld/"),
+                        Text("Key: " + definitionText),
+                        Text(
+                            '''Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin iaculis tristique purus.\" ''')
+                      ],
+                    ))),
+                  );
+                }),
+          ]),
+    ));
   }
 }
 

@@ -18,7 +18,6 @@ class _WordState extends State<Word> {
   }
 
   handlePress() {
-    print(getButtonLabel() + " was touched!");
     return showDialog(
         context: context,
         builder: (BuildContext context) {
@@ -30,7 +29,9 @@ class _WordState extends State<Word> {
   Widget build(BuildContext context) {
     return Container(
       child: FlatButton(
-        child: Text(buttonLabel, style: TextStyle(fontSize: 20.0)),
+        // padding: EdgeInsets.all(0),
+        materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+        child: Text(buttonLabel, style: TextStyle(fontSize: 25.0)),
         onPressed: () => handlePress(),
         color: Colors.blue,
         textColor: Colors.black,
