@@ -15,12 +15,13 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'String Processor',
       theme: ThemeData(
+        fontFamily: 'Open-Sans',
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       home: Scaffold(
           appBar: AppBar(
-            title: Text('The Impact of Reading Aloud'),
+            title: Text('Assignment 1'),
           ),
           body: new ListView.builder(
               itemCount: stringLists.length,

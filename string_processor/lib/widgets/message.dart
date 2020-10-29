@@ -54,15 +54,30 @@ class _MessageState extends State<Message> {
                       }
                     }
                     return AlertDialog(
-                      title: Text(parsedWord.toLowerCase()),
+                      title: Text(parsedWord.toLowerCase(),
+                          style: TextStyle(fontSize: 35)),
                       content: SingleChildScrollView(
                           child: (ListBody(
                         children: <Widget>[
                           // Text("Index " + index),
-                          Text("/həˈlō,heˈlō wərld/"),
-                          Text("Key: " + definitionText),
-                          Text(
-                              '''Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin iaculis tristique purus.\" ''')
+                          Padding(
+                            padding: EdgeInsets.only(bottom: 10),
+                            child: Text("/heh-low-world/"),
+                          ),
+
+                          Padding(
+                              padding: EdgeInsets.only(bottom: 10),
+                              child: Text(
+                                "Key: " + definitionText,
+                                style: TextStyle(fontSize: 20),
+                              )),
+
+                          Padding(
+                              padding: EdgeInsets.only(bottom: 10),
+                              child: Text(
+                                '''Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin iaculis tristique purus.\" ''',
+                                style: TextStyle(fontSize: 20),
+                              )),
                         ],
                       ))),
                     );
