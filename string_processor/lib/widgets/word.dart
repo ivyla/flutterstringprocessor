@@ -21,9 +21,10 @@ class _WordState extends State<Word> {
   }
 
   _handlePress() {
-    if (clicks == 2) {
+    if (clicks >= 2) {
       setState(() => clicks = 0);
     } else if (clicks == 1) {
+      setState(() => clicks = clicks + 1);
       return showDialog(
           context: context,
           builder: (BuildContext context) {

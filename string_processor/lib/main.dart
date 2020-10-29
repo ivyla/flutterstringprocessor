@@ -7,7 +7,7 @@ void main() {
 
 class MyApp extends StatelessWidget {
   String fullText =
-      '''The researchers found that word recall was greatest when the participants read aloud to themselves. \n “This study confirms that learning and memory benefit from active involvement,” says study author Colin M. MacLeod, a professor and chair of the Department of Psychology at the University of Waterloo.''';
+      '''The researchers found that word recall was greatest when the participants read aloud to themselves. \n “This study confirms that learning and memory benefit from active involvement,” says study author Colin M. MacLeod, a professor and chair of the Department of Psychology at the University of Waterloo. \n Here's another sample text to show that the list view works!''';
   @override
   Widget build(BuildContext context) {
     var stringLists = fullText.split("\n");
@@ -20,9 +20,9 @@ class MyApp extends StatelessWidget {
       ),
       home: Scaffold(
           appBar: AppBar(
-            title: Text('Assignment Title'),
+            title: Text('The Impact of Reading Aloud'),
           ),
-          body: ListView.builder(
+          body: new ListView.builder(
               itemCount: stringLists.length,
               itemBuilder: (BuildContext context, int index) {
                 // Paragraph
