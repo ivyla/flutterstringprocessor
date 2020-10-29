@@ -4,18 +4,22 @@ import 'word.dart';
 // RegExp for parsedString: https://stackoverflow.com/questions/53239702/how-to-remove-only-symbols-from-string-in-dart
 
 class Paragraph extends StatefulWidget {
+  final paragraph;
+  Paragraph(this.paragraph);
   @override
-  _ParagraphState createState() => _ParagraphState();
+  _ParagraphState createState() => _ParagraphState(paragraph);
 }
 
 class _ParagraphState extends State<Paragraph> {
   List jsonData;
-  String paragraph =
-      '''The researchers found that word recall was greatest when the participants read aloud to themselves. “This study confirms that learning and memory benefit from active involvement,” says study author Colin M. MacLeod, a professor and chair of the Department of Psychology at the University of Waterloo.''';
+  String paragraph;
+  _ParagraphState(this.paragraph);
   @override
   Widget build(BuildContext context) {
     var parsedText = paragraph.split(" ");
+    var parsedParagraphs = paragraph.split("\n");
 
+// Single Paragraph without \n
     return SingleChildScrollView(
         padding: EdgeInsets.all(18),
         child: Container(

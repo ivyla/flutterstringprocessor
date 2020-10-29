@@ -6,9 +6,12 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
+  String fullText =
+      '''The researchers found that word recall was greatest when the participants read aloud to themselves. \n “This study confirms that learning and memory benefit from active involvement,” says study author Colin M. MacLeod, a professor and chair of the Department of Psychology at the University of Waterloo.''';
   @override
   Widget build(BuildContext context) {
+    var stringLists = fullText.split("\n");
+
     return MaterialApp(
       title: 'String Processor',
       theme: ThemeData(
@@ -17,9 +20,16 @@ class MyApp extends StatelessWidget {
       ),
       home: Scaffold(
           appBar: AppBar(
-            title: Text('String Processor'),
+            title: Text('Assignment Title'),
           ),
-          body: Center(child: Paragraph())),
+          body: ListView.builder(
+              itemCount: stringLists.length,
+              itemBuilder: (BuildContext context, int index) {
+                // Paragraph
+                return Paragraph(stringLists[index]);
+              })),
     );
   }
 }
+
+// body: Center(child: Paragraph(fullText))),
