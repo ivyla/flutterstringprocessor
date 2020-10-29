@@ -31,14 +31,16 @@ class _WordState extends State<Word> {
   @override
   Widget build(BuildContext context) {
     return Container(
+      // margin: EdgeInsets.all(1),
+      padding: EdgeInsets.all(1),
       child: RawMaterialButton(
         // padding: EdgeInsets.all(0),
         materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
         child: Text(buttonLabel, style: TextStyle(fontSize: defaultFontSize)),
         onPressed: () => handlePress(),
-        fillColor: Colors.blue,
+        // fillColor: Colors.blue,
         constraints:
-            BoxConstraints(minWidth: buttonLabel.length.toDouble() * 14),
+            BoxConstraints(minWidth: buttonLabel.length.toDouble() * 13),
         // textColor: Colors.black,
       ),
     );
