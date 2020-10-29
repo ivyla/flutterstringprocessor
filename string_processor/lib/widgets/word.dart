@@ -35,10 +35,15 @@ class _WordState extends State<Word> {
     }
   }
 
+  _clearSelection() {
+    setState(() => clicks = 0);
+  }
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
         onTap: () => _handlePress(),
+        onLongPress: () => _clearSelection(),
         child: Container(
           color: clicks > 0 ? Colors.yellow : null,
           padding: EdgeInsets.only(top: 1, bottom: 1, left: 4, right: 4),
