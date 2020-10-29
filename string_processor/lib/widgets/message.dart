@@ -51,7 +51,7 @@ class _MessageState extends State<Message> {
                     }
                   }
                   return AlertDialog(
-                    title: Text(parsedWord),
+                    title: Text(parsedWord.toLowerCase()),
                     content: SingleChildScrollView(
                         child: (ListBody(
                       children: <Widget>[

@@ -20,41 +20,42 @@ class _WordState extends State<Word> {
     return buttonLabel;
   }
 
-  handlePress() {
-    return showDialog(
-        context: context,
-        builder: (BuildContext context) {
-          return Message(widget.word);
-        });
+  _handlePress() {
+    setState(() {
+      if (clicks == 2) {
+        clicks = 0;
+      } else if (clicks == 1) {
+        return showDialog(
+            context: context,
+            builder: (BuildContext context) {
+              return Message(widget.word);
+            });
+      } else {
+        clicks = clicks + 1;
+      }
+      print("clicks: " + clicks.toString());
+    });
   }
 
   @override
   Widget build(BuildContext context) {
     return Container(
       // margin: EdgeInsets.all(1),
-      padding: EdgeInsets.all(1),
+      padding: EdgeInsets.only(left: 0, right: 1, top: 1, bottom: 1),
       child: RawMaterialButton(
-        // padding: EdgeInsets.all(0),
+        padding: EdgeInsets.only(left: 0),
         materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
-        child: Text(buttonLabel, style: TextStyle(fontSize: defaultFontSize)),
-        onPressed: () => handlePress(),
-        // fillColor: Colors.blue,
+        child: Text(
+          buttonLabel,
+          style: TextStyle(fontSize: defaultFontSize),
+          textAlign: TextAlign.left,
+        ),
+        onPressed: () => _handlePress(),
+        fillColor: clicks > 0 ? Colors.blue : null,
         constraints:
-            BoxConstraints(minWidth: buttonLabel.length.toDouble() * 13),
+            BoxConstraints(minWidth: buttonLabel.length.toDouble() * 14),
         // textColor: Colors.black,
       ),
     );
   }
 }
-// Widget build(BuildContext context) {
-//   return Container(
-//     child: FlatButton(
-//       // padding: EdgeInsets.all(0),
-//       materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
-//       child: Text(buttonLabel, style: TextStyle(fontSize: 25.0)),
-//       onPressed: () => handlePress(),
-//       color: Colors.blue,
-//       textColor: Colors.black,
-//     ),
-//   );
-// }
