@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
       title: 'String Processor',
       theme: ThemeData(
         fontFamily: 'Open-Sans',
-        primarySwatch: Colors.blue,
+        primaryColor: Colors.yellow[800],
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       home: Scaffold(
