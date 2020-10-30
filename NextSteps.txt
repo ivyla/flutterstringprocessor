@@ -1,0 +1,6 @@
+The next technical steps needed to display actual definitions of words:
+• Find a dictionary API (Merriam-Websters?) to use and/or allow teachers to add & customize definitions to words.
+• For custom definitions, a UI should be created for that user to add their definitions for words, and those definitions can be written to a database. 
+The message can thenquery the database and retrieve those custom definitions.
+• For the dictionary API, the message would query the dictionary API similarly as it currently does with the local JSON file, but from a different source.
+
