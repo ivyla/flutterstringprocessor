@@ -61,9 +61,11 @@ class _MessageState extends State<Message> {
                         children: <Widget>[
                           // Text("Index " + index),
                           Padding(
-                            padding: EdgeInsets.only(bottom: 10),
-                            child: Text("/heh-low-world/"),
-                          ),
+                              padding: EdgeInsets.only(bottom: 10),
+                              child: Row(children: [
+                                Text("/heh-low-world/   "),
+                                Icon(Icons.volume_up),
+                              ])),
 
                           Padding(
                               padding: EdgeInsets.only(bottom: 10),
@@ -78,6 +80,19 @@ class _MessageState extends State<Message> {
                                 '''Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin iaculis tristique purus.\" ''',
                                 style: TextStyle(fontSize: 20),
                               )),
+
+                          Padding(
+                              padding: EdgeInsets.only(bottom: 10),
+                              child: RawMaterialButton(
+                                  onPressed: () => {},
+                                  fillColor: Theme.of(context).primaryColor,
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Icon(Icons.add),
+                                      Text('Add to My Words'),
+                                    ],
+                                  )))
                         ],
                       ))),
                     );
