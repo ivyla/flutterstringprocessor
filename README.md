@@ -8,4 +8,4 @@
   <li> Users can unselect a highlighted word by tapping it again or holding on the word. </li>
     </ul>
 
-<p> Future implementations would include saving certain words and writing to the database, hearing pronounciations, creating semantics so that the program can identify names/ locations, and being able to select from a list of multiple strings to read beforehand. </p> 
+<p> Future implementations would include saving certain words and writing to the database, enabling hearable pronounciations, creating semantics so that the program can identify names/ locations, and being able to select from a list of multiple strings to read beforehand. </p> 
