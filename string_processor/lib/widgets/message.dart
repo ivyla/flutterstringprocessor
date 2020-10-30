@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'dart:convert';
+import 'saved_words.dart';
 
 // take in argument of word (might have parenthesis, whitespace, newline)
 // parse it to alphanumeric
@@ -82,17 +83,9 @@ class _MessageState extends State<Message> {
                               )),
 
                           Padding(
-                              padding: EdgeInsets.only(bottom: 10),
-                              child: RawMaterialButton(
-                                  onPressed: () => {},
-                                  fillColor: Theme.of(context).primaryColor,
-                                  child: Row(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      Icon(Icons.add),
-                                      Text('Add to My Words'),
-                                    ],
-                                  )))
+                            padding: EdgeInsets.only(bottom: 10),
+                            child: SavedWords(false),
+                          )
                         ],
                       ))),
                     );
