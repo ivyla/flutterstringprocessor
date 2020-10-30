@@ -1,7 +1,7 @@
 # flutterstringprocessor
 
 <p> The following program is a string processor built using Flutter. </p>
-<p> This program will take in a string, process it to make each word selectable, and can retrieve its corresponding definition using a local JSON file. </p>
+<p> This program will take in a string, process it to make each word selectable, and can retrieve its corresponding definition by querying a local JSON file. </p>
 
   <ul>
     <li> Users can select a word by tapping on it to highlight, and tap again to reveal a definition. </li>
